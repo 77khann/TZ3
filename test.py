@@ -8,14 +8,12 @@ from main import (
     multiplication,
     sum_
 )
+spawn=[]
 
-
-def get_lst(filename):
-    with open(filename, 'r') as f:
+    with open('spawn.txt', 'r') as f:
         arr = [
             int(el) for el in f.readline().split()
         ]
-    return arr
 
 
 def get_large_lst():
@@ -60,7 +58,7 @@ class MyTestCase(unittest.TestCase):
         print(f'Total seconds = {delta}')
 
     def test_scenario(self):
-        arr = get_lst('spawn')
+        arr = get_lst('spawn.txt')
         result = min(sum_(arr), multiplication(arr))
         self.assertEquals(result, sum_(arr)) #в задании не сказано прописать для него время, но если надо, то напишите мне я быстро переделаю)
 
