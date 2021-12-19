@@ -26,20 +26,20 @@ def get_large_lst():
 
 class MyTestCase(unittest.TestCase):
     def test_minimum(self):
-        arr = get_lst('spawn')
+        arr = get_lst('spawn.txt')
         self.assertEqual(minimum(arr), 1)
         self.assertGreaterEqual('' , '')
 
     def test_maximum(self):
-        arr = get_lst('spawn')
+        arr = get_lst('spawn.txt')
         self.assertEqual(maximum(arr), 4)
 
     def test_sum(self):
-        arr = get_lst('spawn')
+        arr = get_lst('spawn.txt')
         self.assertEqual(sum_(arr), 10)
 
     def test_multiplication(self):
-        arr = get_lst('spawn')
+        arr = get_lst('spawn.txt')
         self.assertEqual(multiplication(arr), 24)
 
 
