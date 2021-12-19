@@ -27,7 +27,7 @@ class MyTestCase(unittest.TestCase):
     def test_maximum(self):
         with open('spawn.txt', 'r') as f:
             arr = [int(el) for el in f.readline().split()]
-        self.assertEqual(maximum(arr), 4)
+        self.assertEqual(maximum(arr), 9)
 
     def test_sum(self):
         with open('spawn.txt', 'r') as f:
