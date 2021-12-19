@@ -30,11 +30,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(maximum(arr), 4)
 
     def test_sum(self):
-        arr = get_lst('spawn.txt')
+        with open('spawn.txt', 'r') as f:
+            arr = [int(el) for el in f.readline().split()]
         self.assertEqual(sum_(arr), 10)
 
     def test_multiplication(self):
-        arr = get_lst('spawn.txt')
+        with open('spawn.txt', 'r') as f:
+            arr = [int(el) for el in f.readline().split()]
         self.assertEqual(multiplication(arr), 24)
 
 
