@@ -31,6 +31,5 @@ def main():
     sum_(arr)
     multiplication(arr)
 
-
 if __name__ == '__main__':
     main()
