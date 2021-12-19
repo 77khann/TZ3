@@ -8,7 +8,6 @@ from main import (
     multiplication,
     sum_
 )
-spawn=[]
 
 
 def get_large_lst():
@@ -24,22 +23,43 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(minimum(arr), 1)
         self.assertGreaterEqual('' , '')
 
+        
     def test_maximum(self):
         with open('spawn.txt', 'r') as f:
             arr = [int(el) for el in f.readline().split()]
         self.assertEqual(maximum(arr), 9)
 
+        
     def test_sum(self):
         with open('spawn.txt', 'r') as f:
             arr = [int(el) for el in f.readline().split()]
         self.assertEqual(sum_(arr), 10)
 
+        
     def test_multiplication(self):
         with open('spawn.txt', 'r') as f:
             arr = [int(el) for el in f.readline().split()]
         self.assertEqual(multiplication(arr), 24)
 
+        
+    def test_minimum(self):   #можно и test_time_minimum, но тогда он будет выдавать два минимума и 2 времени
+        arr = get_large_lst()
+        start = datetime.datetime.now()
+        minimum(arr)
+        delta = (datetime.datetime.now() - start).total_seconds()
+        self.assertLessEqual(delta, 2.7)  #время подбирал приблизительно проверенные
+        print(f'Total seconds = {delta}')
 
+        
+    def test_maximum(self):
+        arr = get_large_lst()
+        start = datetime.datetime.now()
+        maximum(arr)
+        delta = (datetime.datetime.now() - start).total_seconds()
+        self.assertLessEqual(delta, 2.7)
+        print(f'Total seconds = {delta}')
+        
+        
     def test_sum(self):
         arr = get_large_lst()
         start = datetime.datetime.now()
@@ -48,6 +68,7 @@ class MyTestCase(unittest.TestCase):
         self.assertLessEqual(delta, 7)
         print(f'Total seconds = {delta}')
 
+        
     def test_multiplication(self):
         arr = get_large_lst()
         start = datetime.datetime.now()
@@ -56,6 +77,7 @@ class MyTestCase(unittest.TestCase):
         self.assertLessEqual(delta, 8.5)
         print(f'Total seconds = {delta}')
 
+        
     def test_scenario(self):
         with open('spawn.txt', 'r') as f:
             arr = [int(el) for el in f.readline().split()]
