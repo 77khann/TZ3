@@ -10,10 +10,8 @@ from main import (
 )
 spawn=[]
 
-    with open('spawn.txt', 'r') as f:
-        arr = [
-            int(el) for el in f.readline().split()
-        ]
+with open('spawn.txt', 'r') as f:
+    arr = [int(el) for el in f.readline().split()]
 
 
 def get_large_lst():
