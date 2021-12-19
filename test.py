@@ -57,7 +57,8 @@ class MyTestCase(unittest.TestCase):
         print(f'Total seconds = {delta}')
 
     def test_scenario(self):
-        arr = get_lst('spawn.txt')
+        with open('spawn.txt', 'r') as f:
+            arr = [int(el) for el in f.readline().split()]
         result = min(sum_(arr), multiplication(arr))
         self.assertEquals(result, sum_(arr)) #в задании не сказано прописать для него время, но если надо, то напишите мне я быстро переделаю)
 
