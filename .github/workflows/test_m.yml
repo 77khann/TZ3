@@ -1,12 +1,8 @@
 name: tz3
-
 on: [push]
-
-
 jobs:
   masyagin: 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
@@ -15,4 +11,4 @@ jobs:
       with:
         python-version: 3.8
     - name: Testing 
-      run: pytest
+      run: python -m unittest
