@@ -9,8 +9,8 @@ from main import (
     sum_
 )
 spawn=[]
-def get_list(n):
-    with open('spawn.txt', 'r') as f:
+def get_list(spawn):
+    with open(spawn, 'r') as f:
         arr = [int(el) for el in f.readline().split()]
     return arr
 
