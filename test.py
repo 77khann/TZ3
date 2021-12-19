@@ -42,21 +42,6 @@ class MyTestCase(unittest.TestCase):
         arr = get_lst('spawn')
         self.assertEqual(multiplication(arr), 24)
 
-    def test_minimum(self):   #можно и test_time_minimum, но тогда он будет выдавать два минимума и 2 времени
-        arr = get_large_lst()
-        start = datetime.datetime.now()
-        minimum(arr)
-        delta = (datetime.datetime.now() - start).total_seconds()
-        self.assertLessEqual(delta, 2.7)  #время подбирал приблительно проверенные
-        print(f'Total seconds = {delta}')
-
-    def test_maximum(self):
-        arr = get_large_lst()
-        start = datetime.datetime.now()
-        maximum(arr)
-        delta = (datetime.datetime.now() - start).total_seconds()
-        self.assertLessEqual(delta, 2.7)
-        print(f'Total seconds = {delta}')
 
     def test_sum(self):
         arr = get_large_lst()
