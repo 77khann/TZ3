@@ -9,9 +9,10 @@ from main import (
     sum_
 )
 spawn=[]
-
-with open('spawn.txt', 'r') as f:
-    arr = [int(el) for el in f.readline().split()]
+def get_list(n):
+    with open('spawn.txt', 'r') as f:
+        arr = [int(el) for el in f.readline().split()]
+    return arr
 
 
 def get_large_lst():
