@@ -22,7 +22,7 @@ def multiplication(arr):
 
 
 def main():
-    with open('spawn', 'r') as f:
+    with open('spawn.txt', 'r') as f:
         arr = [
             int(el) for el in f.readline().split()
         ]
