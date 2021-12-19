@@ -9,10 +9,6 @@ from main import (
     sum_
 )
 spawn=[]
-def get_list():
-    with open('spawn.txt', 'r') as f:
-        arr = [int(el) for el in f.readline().split()]
-    return arr
 
 
 def get_large_lst():
@@ -30,7 +26,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_maximum(self):
         with open('spawn.txt', 'r') as f:
-        arr = [int(el) for el in f.readline().split()]
+            arr = [int(el) for el in f.readline().split()]
         self.assertEqual(maximum(arr), 4)
 
     def test_sum(self):
